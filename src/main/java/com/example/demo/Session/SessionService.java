@@ -1,9 +1,12 @@
 package com.example.demo.Session;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -32,9 +35,10 @@ public class SessionService {
 
 
             Session s =  sessionRepository.findById(sess).get();
-            sessionRepository.
-            s.setNumberOfTries(numberOfTries++);
 
+            s.setNumberOfTries(numberOfTries + 1);
+
+            sessionRepository.save(s);
 
             result.put("Session Id: ", sess);
             result.put("Number of tries: ", Integer.toString(numberOfTries));
@@ -59,5 +63,18 @@ public class SessionService {
 
 
         return result;
+    }
+
+    public List<Session> highscores() {
+
+        List<Session> highscores = sessionRepository.findAll(Sort.by(Sort.Direction.DESC, "numberOfTries"));
+        List<Session> top10 = new ArrayList<>();
+
+        for(int i = 0 ; i < highscores.size() - 1 && i < 10 ; i++ ){
+
+            top10.add(highscores.get(i));
+
+        }
+        return top10;
     }
 }

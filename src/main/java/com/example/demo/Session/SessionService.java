@@ -15,12 +15,13 @@ public class SessionService {
 
     private final SessionRepository sessionRepository;
 
+
     public String start() {
 
         Session str = new Session();
         sessionRepository.insert(str);
 
-        return sessionRepository.findAll().get(sessionRepository.findAll().size() -1 ).getId();
+        return str.getId();
     }
 
     public HashMap<String, String> quess(String sess, Integer number) {

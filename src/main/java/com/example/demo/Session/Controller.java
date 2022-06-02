@@ -1,8 +1,6 @@
 package com.example.demo.Session;
-
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,13 +12,6 @@ public class Controller {
 
 
     private final SessionService sessionService;
-
-    @GetMapping
-    public int dupa(){
-
-        return 1;
-
-    }
 
     @PostMapping(path = "/start")
     public String start() {

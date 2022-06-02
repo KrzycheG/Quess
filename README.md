@@ -1,3 +1,4 @@
+
 Gra "Zgadnij moją liczbę"
 
 Komputer losuje liczbę od 1 do 100, a zadaniem gracza jest jej odgadnięcie. Po każdej próbie komputer odpowiada "too small", "too big" lub "winner".
@@ -14,4 +15,5 @@ c. hiscores, zwracający 10 najlepszych wyników (identyfikator sesji, liczba ru
 6.  Jak ktoś przemyśli design serwisu, to nie będzie problemu. W przeciwnym wypadku będzie trochę roboty. 
 7.  Wymaganie w stylu "zamiast ID, zwróć liczbę losową" albo "po każdej zakończonej grze zwróć oprócz wyniku także highscores". ***
 8. Proste readme.md w repozytorium GIT.
+
 
